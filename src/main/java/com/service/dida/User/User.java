@@ -4,6 +4,7 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
+import java.time.LocalDateTime;
 
 @Entity
 @Builder
@@ -21,5 +22,5 @@ public class User {
     private String refreshToken;
     private String deviceToken;
     private boolean deleted;
-    private Timestamp createdAt;
+    private LocalDateTime createdAt;
 }

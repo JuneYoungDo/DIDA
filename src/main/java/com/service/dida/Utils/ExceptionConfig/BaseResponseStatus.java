@@ -1,4 +1,4 @@
-package com.service.dida.utils.exceptionConfig;
+package com.service.dida.Utils.ExceptionConfig;
 
 import lombok.Getter;
 
@@ -10,7 +10,11 @@ public enum BaseResponseStatus {
     EMPTY_REFRESH(400,"Refresh Token이 없습니다.",101),
     INVALID_JWT(400,"Jwt가 유효하지 않습니다.",102),
     INVALID_REFRESH(400,"Refresh Token이 유효하지 않습니다.",103),
-    INVALID_KAKAO_ID_TOKEN(400,"유효하지 않은 카카오 ID Token 입니다.",104)
+    INVALID_KAKAO_ID_TOKEN(400,"유효하지 않은 카카오 ID Token 입니다.",104),
+    INVALID_APPLE_ID_TOKEN(400,"유효하지 않은 애플 ID Token 입니다.",105),
+    FAILED_TO_APPLE_LOGIN(400,"애플 로그인에 실패하였습니다.",106),
+    FAILED_TO_FIND_AVAILABLE_RSA(400,"암호키를 찾지 못하였습니다.",107),
+    INVALID_PATH(400,"유효하지 않은 경로입니다.",108),
     ;
 
 
