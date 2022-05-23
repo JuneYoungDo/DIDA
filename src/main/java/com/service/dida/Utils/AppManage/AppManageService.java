@@ -1,6 +1,6 @@
-package com.service.dida.Utils.appManage;
+package com.service.dida.Utils.AppManage;
 
-import com.service.dida.Utils.appManage.DTO.GetAppVersionDto;
+import com.service.dida.Utils.AppManage.DTO.GetAppVersionDto;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 

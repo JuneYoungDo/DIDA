@@ -1,4 +1,4 @@
-package com.service.dida.Utils.appManage;
+package com.service.dida.Utils.AppManage;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
