@@ -1,4 +1,4 @@
-package com.service.dida.utils.exceptionConfig;
+package com.service.dida.Utils.ExceptionConfig;
 
 import lombok.Getter;
 
@@ -13,7 +13,8 @@ public enum BaseResponseStatus {
     INVALID_KAKAO_ID_TOKEN(400,"유효하지 않은 카카오 ID Token 입니다.",104),
     INVALID_APPLE_ID_TOKEN(400,"유효하지 않은 애플 ID Token 입니다.",105),
     FAILED_TO_APPLE_LOGIN(400,"애플 로그인에 실패하였습니다.",106),
-    FAILED_TO_FIND_AVAILABLE_RSA(400,"암호키를 찾지 못하였습니다.",117),
+    FAILED_TO_FIND_AVAILABLE_RSA(400,"암호키를 찾지 못하였습니다.",107),
+    INVALID_PATH(400,"유효하지 않은 경로입니다.",108),
     ;
 
 

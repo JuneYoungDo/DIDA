@@ -1,8 +1,8 @@
-package com.service.dida.utils.Oauth;
+package com.service.dida.Utils.Oauth.service;
 
 import com.google.gson.*;
-import com.service.dida.utils.exceptionConfig.BaseException;
-import com.service.dida.utils.exceptionConfig.BaseResponseStatus;
+import com.service.dida.Utils.ExceptionConfig.BaseException;
+import com.service.dida.Utils.ExceptionConfig.BaseResponseStatus;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.ExpiredJwtException;
 import io.jsonwebtoken.Jwts;
