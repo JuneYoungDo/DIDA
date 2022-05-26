@@ -19,6 +19,7 @@ public class User {
     private Long userId;
 
     private String email;
+    private String nickname;
     private String refreshToken;
     private String deviceToken;
     private boolean deleted;

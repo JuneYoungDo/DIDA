@@ -1,9 +1,9 @@
-package com.service.dida.Utils;
+package com.service.dida.utils;
 
 import com.service.dida.User.User;
 import com.service.dida.User.UserRepository;
-import com.service.dida.Utils.ExceptionConfig.BaseException;
-import com.service.dida.Utils.ExceptionConfig.BaseResponseStatus;
+import com.service.dida.utils.ExceptionConfig.BaseException;
+import com.service.dida.utils.ExceptionConfig.BaseResponseStatus;
 import io.jsonwebtoken.*;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

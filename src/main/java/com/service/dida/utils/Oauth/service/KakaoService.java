@@ -1,10 +1,10 @@
-package com.service.dida.Utils.Oauth.service;
+package com.service.dida.utils.Oauth.service;
 
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
-import com.service.dida.Utils.ExceptionConfig.BaseException;
-import com.service.dida.Utils.ExceptionConfig.BaseResponseStatus;
+import com.service.dida.utils.ExceptionConfig.BaseException;
+import com.service.dida.utils.ExceptionConfig.BaseResponseStatus;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

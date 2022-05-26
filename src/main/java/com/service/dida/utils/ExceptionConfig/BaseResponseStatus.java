@@ -1,4 +1,4 @@
-package com.service.dida.Utils.ExceptionConfig;
+package com.service.dida.utils.ExceptionConfig;
 
 import lombok.Getter;
 
@@ -15,6 +15,8 @@ public enum BaseResponseStatus {
     FAILED_TO_APPLE_LOGIN(400,"애플 로그인에 실패하였습니다.",106),
     FAILED_TO_FIND_AVAILABLE_RSA(400,"암호키를 찾지 못하였습니다.",107),
     INVALID_PATH(400,"유효하지 않은 경로입니다.",108),
+    INVALID_NICKNAME(400,"사용할 수 없는 닉네임 입니다.",109),
+    INVALID_EMAIL(400,"이미 사용중인 이메일 입니다.",110),
     ;
 
 

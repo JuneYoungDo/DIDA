@@ -1,4 +1,4 @@
-package com.service.dida.Utils.ExceptionConfig;
+package com.service.dida.utils.ExceptionConfig;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
