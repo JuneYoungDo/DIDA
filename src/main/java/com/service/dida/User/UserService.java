@@ -1,12 +1,14 @@
 package com.service.dida.User;
 
+import com.service.dida.User.DTO.CheckNicknameRes;
+import com.service.dida.User.DTO.CreateUserReq;
 import com.service.dida.User.DTO.LoginRes;
-import com.service.dida.Utils.ExceptionConfig.BaseException;
-import com.service.dida.Utils.ExceptionConfig.BaseResponseStatus;
-import com.service.dida.Utils.JwtService;
-import com.service.dida.Utils.Oauth.helper.SocialLoginType;
-import com.service.dida.Utils.Oauth.service.AppleService;
-import com.service.dida.Utils.Oauth.service.KakaoService;
+import com.service.dida.utils.ExceptionConfig.BaseException;
+import com.service.dida.utils.ExceptionConfig.BaseResponseStatus;
+import com.service.dida.utils.JwtService;
+import com.service.dida.utils.Oauth.helper.SocialLoginType;
+import com.service.dida.utils.Oauth.service.AppleService;
+import com.service.dida.utils.Oauth.service.KakaoService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -31,6 +33,7 @@ public class UserService {
     public void createUser(String email) {
         User user = User.builder()
                 .email(email)
+                .nickname("")
                 .refreshToken("")
                 .deviceToken("")
                 .deleted(false)
@@ -58,11 +61,23 @@ public class UserService {
             User user = userRepository.findByEmail(email).orElse(null);
             user.setRefreshToken(jwtService.createRefreshToken(user.getUserId()));
             return new LoginRes(jwtService.createJwt(user.getUserId()), user.getRefreshToken());
-        } else {    // 회원 가입
-            createUser(email);
-            User user = userRepository.findByEmail(email).orElse(null);
-            user.setRefreshToken(jwtService.createRefreshToken(user.getUserId()));
-            return new LoginRes(jwtService.createJwt(user.getUserId()), user.getRefreshToken());
+        } else {    // 이메일 반환
+            return new LoginRes(email,"");
         }
+    }
+
+    public CheckNicknameRes checkNickname(String nickname) {
+        return new CheckNicknameRes(userRepository.existsByNickname(nickname).orElse(false));
+    }
+
+    public LoginRes createUser2(CreateUserReq createUserReq) throws BaseException {
+        if(userRepository.existsByEmail(createUserReq.getEmail()).orElse(false) == true)
+            throw new BaseException(BaseResponseStatus.INVALID_EMAIL);
+        if(userRepository.existsByNickname(createUserReq.getNickname()).orElse(false) == true)
+            throw new BaseException(BaseResponseStatus.INVALID_NICKNAME);
+        createUser(createUserReq.getEmail());
+        User user = userRepository.findByEmail(createUserReq.getEmail()).orElse(null);
+        user.setRefreshToken(jwtService.createRefreshToken(user.getUserId()));
+        return new LoginRes(jwtService.createJwt(user.getUserId()),user.getRefreshToken());
     }
 }

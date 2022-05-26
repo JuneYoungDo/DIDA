@@ -1,4 +1,4 @@
-package com.service.dida.Utils.Oauth.helper;
+package com.service.dida.utils.Oauth.helper;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.convert.converter.Converter;

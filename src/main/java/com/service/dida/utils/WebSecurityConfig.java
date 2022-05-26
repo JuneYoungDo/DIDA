@@ -1,4 +1,4 @@
-package com.service.dida.Utils;
+package com.service.dida.utils;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
