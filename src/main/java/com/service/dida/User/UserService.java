@@ -70,6 +70,7 @@ public class UserService {
         return new CheckNicknameRes(userRepository.existsByNickname(nickname).orElse(false));
     }
 
+    @Transactional
     public LoginRes createUser2(CreateUserReq createUserReq) throws BaseException {
         if(userRepository.existsByEmail(createUserReq.getEmail()).orElse(false) == true)
             throw new BaseException(BaseResponseStatus.INVALID_EMAIL);
@@ -77,6 +78,7 @@ public class UserService {
             throw new BaseException(BaseResponseStatus.INVALID_NICKNAME);
         createUser(createUserReq.getEmail());
         User user = userRepository.findByEmail(createUserReq.getEmail()).orElse(null);
+        user.setNickname(createUserReq.getNickname());
         user.setRefreshToken(jwtService.createRefreshToken(user.getUserId()));
         return new LoginRes(jwtService.createJwt(user.getUserId()),user.getRefreshToken());
     }
