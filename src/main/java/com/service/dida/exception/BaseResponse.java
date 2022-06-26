@@ -1,4 +1,4 @@
-package com.service.dida.utils.exceptionConfig;
+package com.service.dida.exception;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.AllArgsConstructor;
