@@ -12,4 +12,7 @@ public interface FollowRepository extends JpaRepository<Follow, Long> {
 
     @Query(value = "select COUNT(F) from Follow F where F.followingId = :userId and F.mode = true")
     Optional<Long> getFollowingCnt(Long userId);
+
+    @Query(value = "select f from Follow f where f.followingId = :userId and f.followerId = :otherId")
+    Optional<Follow> getFollowStatus(Long userId,Long otherId);
 }

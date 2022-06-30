@@ -20,4 +20,8 @@ public class Follow {
     private Long followingId;   // 팔로우를 하는 사람
     private Long followerId;    // 팔로우를 당한 사람
     private boolean mode;
+
+    public void changeMode(boolean mode) {
+        this.mode = mode;
+    }
 }
