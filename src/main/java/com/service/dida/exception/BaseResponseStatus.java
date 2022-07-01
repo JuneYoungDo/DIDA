@@ -20,6 +20,9 @@ public enum BaseResponseStatus {
     INVALID_USER(400,"올바르지 않은 사용자 입니다.",111),
     EMPTY_REFRESH_TOKEN(400,"refresh token 이 없습니다.",112),
     INVALID_TOKEN(400,"유효하지 않은 토큰입니다.",113),
+    NEED_WALLET_OR_WRONG_PWD(400,"지갑이 없거나 비밀번호가 올바르지 않습니다.",114),
+    INVALID_CARD_ID(400,"유효하지 않은 NFT 입니다.",115),
+    ALREADY_IN_MARKET(400,"이미 판매중입니다.",116),
     ;
 
 
