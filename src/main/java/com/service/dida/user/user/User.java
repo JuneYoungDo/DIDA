@@ -1,6 +1,7 @@
 package com.service.dida.user.user;
 
 import com.service.dida.card.Card;
+import com.service.dida.market.Market;
 import com.service.dida.user.wallet.Wallet;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -41,6 +42,9 @@ public class User {
 
     @OneToMany(mappedBy = "user", cascade = {CascadeType.ALL}, orphanRemoval = true)
     private List<Card> cards;
+
+    @OneToMany(mappedBy = "user", cascade = {CascadeType.ALL}, orphanRemoval = true)
+    private List<Market> markets;
 
     public void changeRefreshToken(String refreshToken) {
         this.refreshToken = refreshToken;
