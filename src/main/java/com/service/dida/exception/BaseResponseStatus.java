@@ -23,6 +23,12 @@ public enum BaseResponseStatus {
     NEED_WALLET_OR_WRONG_PWD(400,"지갑이 없거나 비밀번호가 올바르지 않습니다.",114),
     INVALID_CARD_ID(400,"유효하지 않은 NFT 입니다.",115),
     ALREADY_IN_MARKET(400,"이미 판매중입니다.",116),
+    FAILED_TO_CREAT_ACCOUNT(400,"지갑 생성에 실패하였습니다.",117),
+
+
+
+
+    INTERNAL_SERVER_ERROR(500,"외부 API 동작에 실패하였습니다.",499)
     ;
 
 

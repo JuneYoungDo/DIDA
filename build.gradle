@@ -41,11 +41,9 @@ dependencies {
 
     implementation group: 'com.googlecode.json-simple', name: 'json-simple', version: '1.1'
 
-    // httpClient
-    implementation group: 'commons-httpclient', name: 'commons-httpclient', version: '3.1'
-    // https://mvnrepository.com/artifact/org.apache.httpcomponents/httpmime
-    implementation group: 'org.apache.httpcomponents', name: 'httpmime', version: '4.3.1'
-
+    // s3
+    implementation group: 'org.springframework.cloud', name: 'spring-cloud-aws', version: '2.2.1.RELEASE', ext: 'pom'
+    implementation 'com.amazonaws:aws-java-sdk-s3:1.11.901'
 
     compileOnly 'org.projectlombok:lombok'
 
